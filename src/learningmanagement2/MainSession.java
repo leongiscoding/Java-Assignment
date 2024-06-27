@@ -133,10 +133,18 @@ public class MainSession extends javax.swing.JFrame {
 
     private void btnAccActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAccActionPerformed
         // TODO add your handling code here:
+        this.dispose();
+        ManageAccSession m = new ManageAccSession();
+        m.setDefaultCloseOperation(MainSession.EXIT_ON_CLOSE);
+        m.setVisible(true);
     }//GEN-LAST:event_btnAccActionPerformed
 
     private void btnLogOutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLogOutActionPerformed
         // TODO add your handling code here:
+        this.dispose();
+        LoginSession1 log = new LoginSession1();
+        log.setDefaultCloseOperation(MainSession.EXIT_ON_CLOSE);
+        log.setVisible(true);
     }//GEN-LAST:event_btnLogOutActionPerformed
 
     /**

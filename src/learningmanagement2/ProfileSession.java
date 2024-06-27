@@ -214,6 +214,10 @@ public class ProfileSession extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
+        this.dispose();
+        MainSession m = new MainSession();
+        m.setDefaultCloseOperation(ProfileSession.EXIT_ON_CLOSE);
+        m.setVisible(true);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**

@@ -51,6 +51,11 @@ public class ManageAccSession extends javax.swing.JFrame {
         jButton1.setBackground(new java.awt.Color(204, 204, 255));
         jButton1.setText("Back");
         jButton1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -98,12 +103,6 @@ public class ManageAccSession extends javax.swing.JFrame {
                 .addComponent(jLabel3)
                 .addContainerGap())
         );
-
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
-            }
-        });
 
         jButton2.setBackground(new java.awt.Color(204, 204, 255));
         jButton2.setText("Save");
@@ -157,9 +156,13 @@ public class ManageAccSession extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
+        this.dispose();
+        MainSession m = new MainSession();
+        m.setDefaultCloseOperation(ManageAccSession.EXIT_ON_CLOSE);
+        m.setVisible(true);
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
