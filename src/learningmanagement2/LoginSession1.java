@@ -1,6 +1,7 @@
 package learningmanagement2;
 
 import javax.swing.JOptionPane;
+import model.UserAuthentication;
 
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
@@ -14,7 +15,7 @@ import javax.swing.JOptionPane;
 public class LoginSession1 extends javax.swing.JFrame {
 
     private MainSession mainSession;
-    
+    private UserAuthentication userAuth;
     
     /**
      * Creates new form JFrame1
@@ -22,6 +23,8 @@ public class LoginSession1 extends javax.swing.JFrame {
     public LoginSession1() {
         initComponents();
         mainSession = new MainSession();
+        userAuth = new UserAuthentication();
+
     }
 
     /**
@@ -128,31 +131,28 @@ public class LoginSession1 extends javax.swing.JFrame {
     }//GEN-LAST:event_passwordFieldActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-       // Get the username and password from the text fields
-    String username = usernameField.getText();
-    String password = new String(passwordField.getPassword());
+  String username = usernameField.getText();
+        String password = new String(passwordField.getPassword());
 
-    // Check if the username or password fields are empty
-    if (username.isEmpty() || password.isEmpty()) {
-        // If either field is empty, show a message prompting the user to fill in the information
-        JOptionPane.showMessageDialog(this, "Please enter both username and password", "Input Error", JOptionPane.WARNING_MESSAGE);
-        return; // Exit the method early
-    }
+         if (username.isEmpty() || password.isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Please enter both username and password", "Input Error", JOptionPane.WARNING_MESSAGE);
+            return;
+        }
 
-    // Dummy data for validation
-    String validUsername = "mun";
-    String validPassword = "12345";
+        try {
+            UserAuthentication.UserType userType = userAuth.validateUser(username, password);
 
-    // Check if the entered username and password match the dummy data
-    if (username.equals(validUsername) && password.equals(validPassword)) {
-        // If the username and password are correct, proceed to the next JFrame
-        MainSession ad = new MainSession();
-        ad.setVisible(true);  // 显示目标 JFrame
-        dispose();  // 关闭当前 JFrame
-    } else {
-        // If the username or password is incorrect, show an error message
-        JOptionPane.showMessageDialog(this, "Invalid username or password", "Login Error", JOptionPane.ERROR_MESSAGE);
-    }
+            if (userType != UserAuthentication.UserType.NONE) {
+                MainSession ad = new MainSession();
+                ad.setVisible(true);
+                dispose();
+            } else {
+                JOptionPane.showMessageDialog(this, "Invalid username or password", "Login Error", JOptionPane.ERROR_MESSAGE);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+            JOptionPane.showMessageDialog(this, "Database connection error: " + e.getMessage(), "Connection Error", JOptionPane.ERROR_MESSAGE);
+        }
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
