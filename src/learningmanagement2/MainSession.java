@@ -10,11 +10,13 @@ package learningmanagement2;
  */
 public class MainSession extends javax.swing.JFrame {
 
+    //private ProfileSession profileSession;
     /**
      * Creates new form MainSession
      */
     public MainSession() {
         initComponents();
+        //profileSession = new ProfileSession();
     }
 
     /**
@@ -28,89 +30,76 @@ public class MainSession extends javax.swing.JFrame {
 
         mPanel1 = new javax.swing.JPanel();
         mPanel2 = new javax.swing.JPanel();
-        mLabel1 = new javax.swing.JLabel();
         btnProfile = new javax.swing.JButton();
         btnAcc = new javax.swing.JButton();
-        btnLogOut = new javax.swing.JButton();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        mLabel2 = new javax.swing.JLabel();
+        mLabel1 = new javax.swing.JLabel();
+        mLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        mPanel1.setBackground(new java.awt.Color(204, 204, 255));
+        mPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
-        mPanel2.setBackground(new java.awt.Color(204, 255, 204));
+        mPanel2.setBackground(new java.awt.Color(45, 155, 240));
 
-        mLabel1.setFont(new java.awt.Font("Segoe Print", 1, 36)); // NOI18N
-        mLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        mLabel1.setText("Welcome");
-
-        btnProfile.setBackground(new java.awt.Color(204, 255, 204));
-        btnProfile.setFont(new java.awt.Font("Segoe Print", 1, 18)); // NOI18N
+        btnProfile.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
+        btnProfile.setForeground(new java.awt.Color(65, 75, 178));
         btnProfile.setText("Profile");
-        btnProfile.setBorder(null);
+        btnProfile.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(159, 164, 216), 3, true));
         btnProfile.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnProfileActionPerformed(evt);
             }
         });
 
-        btnAcc.setBackground(new java.awt.Color(204, 255, 204));
-        btnAcc.setFont(new java.awt.Font("Segoe Print", 1, 18)); // NOI18N
+        btnAcc.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
+        btnAcc.setForeground(new java.awt.Color(65, 75, 178));
         btnAcc.setText("Manage Account");
-        btnAcc.setBorder(null);
+        btnAcc.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(159, 164, 216), 3, true));
         btnAcc.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnAccActionPerformed(evt);
             }
         });
 
-        btnLogOut.setBackground(new java.awt.Color(204, 255, 204));
-        btnLogOut.setFont(new java.awt.Font("Segoe Print", 1, 18)); // NOI18N
-        btnLogOut.setText("Log Out");
-        btnLogOut.setBorder(null);
-        btnLogOut.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnLogOutActionPerformed(evt);
-            }
-        });
+        mLabel2.setFont(new java.awt.Font("SansSerif", 1, 36)); // NOI18N
+        mLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        mLabel2.setText("Welcome");
 
         javax.swing.GroupLayout mPanel2Layout = new javax.swing.GroupLayout(mPanel2);
         mPanel2.setLayout(mPanel2Layout);
         mPanel2Layout.setHorizontalGroup(
             mPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(btnProfile, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(btnAcc, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(btnLogOut, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(mLabel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 209, Short.MAX_VALUE)
+            .addComponent(btnAcc, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 221, Short.MAX_VALUE)
+            .addGroup(mPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(mPanel2Layout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(mLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 209, Short.MAX_VALUE)
+                    .addContainerGap()))
         );
         mPanel2Layout.setVerticalGroup(
             mPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(mPanel2Layout.createSequentialGroup()
-                .addGap(32, 32, 32)
-                .addComponent(mLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addGap(124, 124, 124)
                 .addComponent(btnProfile, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(10, 10, 10)
+                .addGap(18, 18, 18)
                 .addComponent(btnAcc, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(10, 10, 10)
-                .addComponent(btnLogOut, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 107, Short.MAX_VALUE))
+                .addGap(0, 169, Short.MAX_VALUE))
+            .addGroup(mPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(mPanel2Layout.createSequentialGroup()
+                    .addGap(10, 10, 10)
+                    .addComponent(mLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(289, Short.MAX_VALUE)))
         );
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null}
-            },
-            new String [] {
-                "Class ID", "Class Name"
-            }
-        ));
-        jScrollPane1.setViewportView(jTable1);
+        mLabel1.setFont(new java.awt.Font("SansSerif", 1, 24)); // NOI18N
+        mLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        mLabel1.setText("Class Name");
+
+        mLabel3.setFont(new java.awt.Font("SansSerif", 1, 24)); // NOI18N
+        mLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        mLabel3.setText("Class ID");
 
         javax.swing.GroupLayout mPanel1Layout = new javax.swing.GroupLayout(mPanel1);
         mPanel1.setLayout(mPanel1Layout);
@@ -118,16 +107,20 @@ public class MainSession extends javax.swing.JFrame {
             mPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(mPanel1Layout.createSequentialGroup()
                 .addComponent(mPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 675, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 19, Short.MAX_VALUE))
+                .addGap(29, 29, 29)
+                .addComponent(mLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(29, 29, 29)
+                .addComponent(mLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(353, Short.MAX_VALUE))
         );
         mPanel1Layout.setVerticalGroup(
             mPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(mPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(mPanel1Layout.createSequentialGroup()
-                .addGap(17, 17, 17)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 404, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(51, 51, 51)
+                .addGroup(mPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(mLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(mLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -146,28 +139,14 @@ public class MainSession extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnProfileActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnProfileActionPerformed
-        // TODO add your handling code here:
-        this.dispose();
-        ProfileSession p = new ProfileSession();
-        p.setDefaultCloseOperation(MainSession.EXIT_ON_CLOSE);
-        p.setVisible(true);
+        /*ProfileSession ad = new ProfileSession();
+        ad.setVisible(true);  // 显示目标 JFrame
+        dispose();// */
     }//GEN-LAST:event_btnProfileActionPerformed
 
     private void btnAccActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAccActionPerformed
-        // TODO add your handling code here:
-        this.dispose();
-        ManageAccSession m = new ManageAccSession();
-        m.setDefaultCloseOperation(MainSession.EXIT_ON_CLOSE);
-        m.setVisible(true);
+        
     }//GEN-LAST:event_btnAccActionPerformed
-
-    private void btnLogOutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLogOutActionPerformed
-        // TODO add your handling code here:
-        this.dispose();
-        LoginSession1 log = new LoginSession1();
-        log.setDefaultCloseOperation(MainSession.EXIT_ON_CLOSE);
-        log.setVisible(true);
-    }//GEN-LAST:event_btnLogOutActionPerformed
 
     /**
      * @param args the command line arguments
@@ -206,11 +185,10 @@ public class MainSession extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAcc;
-    private javax.swing.JButton btnLogOut;
     private javax.swing.JButton btnProfile;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
     private javax.swing.JLabel mLabel1;
+    private javax.swing.JLabel mLabel2;
+    private javax.swing.JLabel mLabel3;
     private javax.swing.JPanel mPanel1;
     private javax.swing.JPanel mPanel2;
     // End of variables declaration//GEN-END:variables
